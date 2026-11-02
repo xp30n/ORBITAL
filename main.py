@@ -8,7 +8,18 @@ def homepage():
     planet = "Saturn"
     mission = "Project ORBITAL"
 
-    return render_template("index.html", name=astronaut, planet=planet, mission=mission)
+    planet_data = [{
+        'name': 'Earth',
+        'type' : 'Terrestrial',
+        'moons' : '1'
+    },
+    {
+        'name' : 'Saturn',
+        'type' : 'Gas Giant',
+        'moons' : '146'
+    }]
+
+    return render_template("index.html", name=astronaut, planet=planet, mission=mission, planet_data=planet_data)
 
 @app.route('/about')
 def about_page():

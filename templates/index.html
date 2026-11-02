@@ -14,5 +14,14 @@
 
     <p>Assigned Planet: {{ planet }}</p>
     <p>Mission Designation: {{ mission }}</p>
+
+    <ul>
+      {% for planet in planet_data %}
+      <li>
+        <h2>{{ planet.name}} | {{ planet.type}} </h2>
+        <p>Moons : {{ planet.moons}}</p>
+      </li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
