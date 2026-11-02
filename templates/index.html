@@ -18,8 +18,15 @@
     <ul>
       {% for planet in planet_data %}
       <li>
-        <h2>{{ planet.name}} | {{ planet.type}} </h2>
-        <p>Moons : {{ planet.moons}}</p>
+        <h2>{{ planet.name }} | {{ planet.type }}</h2>
+        <p>Moons : {{ planet.moons }}</p>
+
+        {% if planet.name == "Earth" %}
+        <p>HABITABLE WORLD</p>
+        {% else %}
+        <p>UNEXPLORED WORLD</p>
+        {% endif %}
+        
       </li>
       {% endfor %}
     </ul>
