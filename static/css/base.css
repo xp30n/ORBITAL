@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Hacker";
+  src: url("../fonts/hacker.ttf") format("truetype");
+}
+
+* {
+  margin: 3px;
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(176, 212, 247);
+  font-family: "Hacker", sans-serif;
+  font-size: 20px;
+}
