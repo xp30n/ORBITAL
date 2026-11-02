@@ -1,4 +1,4 @@
-<img width="730" height="164" alt="_" src="https://github.com/user-attachments/assets/cb15fce9-d9be-4d86-a894-c44b11a3775c" />
+<img width="736" height="130" alt="_ (1)" src="https://github.com/user-attachments/assets/cdf9c8b2-d02d-453b-8f23-711af1e87639" />
 
 # ORBITAL
 [ PROJECT UNDER DEVELOPMENT ] 
