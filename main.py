@@ -8,7 +8,7 @@ def homepage():
     planet = "Saturn"
     mission = "Project ORBITAL"
 
-    planet_data = [{
+    celestial_data = [{
         'name': 'Earth',
         'type' : 'Terrestrial',
         'moons' : '1'
@@ -17,9 +17,19 @@ def homepage():
         'name' : 'Saturn',
         'type' : 'Gas Giant',
         'moons' : '146'
+    },
+    {
+        'name' : 'GJ 15 A b',
+        'type' : 'Exoplanet',
+        'moons' : '0'
+    },
+    {
+        'name' : 'Tau Ceti',
+        'type' : 'Star',
+        'moons' : '0'
     }]
 
-    return render_template("index.html", name=astronaut, planet=planet, mission=mission, planet_data=planet_data)
+    return render_template("index.html", name=astronaut, planet=planet, mission=mission, celestial_data=celestial_data)
 
 @app.route('/about')
 def about_page():

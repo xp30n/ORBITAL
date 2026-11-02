@@ -16,17 +16,23 @@
     <p>Mission Designation: {{ mission }}</p>
 
     <ul>
-      {% for planet in planet_data %}
+      {% for object in celestial_data %}
       <li>
-        <h2>{{ planet.name }} | {{ planet.type }}</h2>
-        <p>Moons : {{ planet.moons }}</p>
+        <h2>{{ object.name }} | {{ object.type }}</h2>
+        <p>Moons : {{ object.moons }}</p>
 
-        {% if planet.name == "Earth" %}
+        {% if object.name == "Earth" %}
         <p>HABITABLE WORLD</p>
+
+        {% elif object.name == "Saturn" %}
+        <p>GAS GIANT</p>
+
+        {% elif object.name == "GJ 15 A b" %}
+        <p>EARTH-LIKE</p>
+
         {% else %}
-        <p>UNEXPLORED WORLD</p>
+        <p>UNCLASSIFIED OBJECT</p>
         {% endif %}
-        
       </li>
       {% endfor %}
     </ul>
