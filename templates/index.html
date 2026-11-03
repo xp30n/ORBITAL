@@ -15,7 +15,10 @@
     <!-- <p>Assigned Planet: {{ planet }}</p>
     <p>Mission Designation: {{ mission }}</p> -->
 
-    <img src="{{ url_for('static', filename='images/moon.jpeg') }}" alt="Luna">
+    <img
+      src="{{ url_for('static', filename='images/moon.jpeg') }}"
+      alt="Luna"
+    />
 
     <ul>
       {% for object in celestial_data %}
