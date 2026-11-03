@@ -63,23 +63,23 @@ def missions_page():
         {
             "name" : "Voyager 1",
             "destination" : "Interstellar Space",
-            "year" : "1977",
+            "year" : 1977,
             "status" : "Active"
         },
         {
             "name" : "Voyager 2",
             "destination" : "Interstellar Space",
-            "year" : "1977",
+            "year" : 1977,
             "status" : "Active"
         },
         {
             "name" : "Pioneer 10",
             "destination" : "Jupiter",
-            "year" : "1972",
-            "status" : "decommissioned"
+            "year" : 1972,
+            "status" : "Decommissioned"
         }
-    ]
-
-    render_template("missions.html", name=astronaut, missions=missions)
+        ]
+    
+    return render_template("missions.html", name=astronaut, missions=missions)
 
 app.run(debug=True)
