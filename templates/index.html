@@ -3,11 +3,9 @@
 
 <p>Mission Designation: {{ mission }}</p>
 
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
 
-<!-- <h1>Welcome aboard, {{ name }}.</h1>
-
-<p>Mission Designation: {{ mission }}</p> -->
+{% block content %}
 
 <img src="{{ url_for('static', filename='images/water.jpeg') }}" alt="Luna" />
 
