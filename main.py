@@ -4,11 +4,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    astronaut = "[REDACTED]"
-    planet = "Saturn"
-    mission = "Project ORBITAL"
+    user = "[REDACTED]"
 
-    return render_template("index.html", name=astronaut, planet=planet, mission=mission)
+    astronaut = {
+        "name" : "Lia",
+        "rank" : "Mission Specialist III",
+        "specialty" : "Celestial Observation",
+        "mission_count" : 6
+    }
+
+    return render_template("index.html", name=user, astronaut=astronaut)
 
 @app.route('/about')
 def about_page():
