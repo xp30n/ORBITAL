@@ -15,3 +15,15 @@ body {
   color: rgb(0, 255, 47);
   font-size: 20px;
 }
+
+nav {
+  padding-inline: -5px;
+}
+
+a {
+  color: rgb(0, 255, 47);
+}
+
+a:hover {
+  color: rgb(3, 101, 21);
+}

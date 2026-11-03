@@ -8,28 +8,7 @@ def homepage():
     planet = "Saturn"
     mission = "Project ORBITAL"
 
-    celestial_data = [{
-        'name': 'Earth',
-        'type' : 'Terrestrial',
-        'moons' : '1',
-    },
-    {
-        'name' : 'Saturn',
-        'type' : 'Gas Giant',
-        'moons' : '146'
-    },
-    {
-        'name' : 'GJ 15 A b',
-        'type' : 'Exoplanet',
-        'moons' : '0'
-    },
-    {
-        'name' : 'Tau Ceti',
-        'type' : 'Star',
-        'moons' : '0'
-    }]
-
-    return render_template("index.html", name=astronaut, planet=planet, mission=mission, celestial_data=celestial_data)
+    return render_template("index.html", name=astronaut, planet=planet, mission=mission)
 
 @app.route('/about')
 def about_page():
@@ -79,7 +58,27 @@ def missions_page():
             "status" : "Decommissioned"
         }
         ]
+    celestial_data = [{
+            'name': 'Earth',
+            'type' : 'Terrestrial',
+            'moons' : '1',
+        },
+        {
+            'name' : 'Saturn',
+            'type' : 'Gas Giant',
+            'moons' : '146'
+        },
+        {
+            'name' : 'GJ 15 A b',
+            'type' : 'Exoplanet',
+            'moons' : '0'
+        },
+        {
+            'name' : 'Tau Ceti',
+            'type' : 'Star',
+            'moons' : '0'
+        }]
     
-    return render_template("missions.html", name=astronaut, missions=missions)
+    return render_template("missions.html", name=astronaut, missions=missions, celestial_data=celestial_data)
 
 app.run(debug=True)
