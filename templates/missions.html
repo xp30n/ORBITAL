@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <title>ORBITAL | MISSION CONTROL</title>
+  </head>
+  <body>
+    <h1>Welcome aboard, {{ name }}.</h1>
+
+    {% if missions %}
+    <h3>MISSION DATABASE ONLINE</h3>
+    {% else %}
+    <p>NO MISSION DATA AVAILABLE</p>
+    {% endif %}
+
+    <ul>
+      {% for mission in missions %}
+      <li>
+        <h2>{{ mission.name }}</h2>
+        <h3>Destination: {{ mission.destination }}</h3>
+        <p>Deployed: {{ mission.year }}</p>
+        <p>Mission Status: {{ mission.status }}</p>
+
+        {% if mission.status == "Active" %}
+        <p>MISSION ACTIVE</p>
+        {% else %}
+        <p>MISSION INACTIVE</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
