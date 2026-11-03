@@ -1,45 +1,14 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/base.css') }}"
-    />
-    <title>ORBITAL | MISSION CONTROL</title>
-  </head>
-  <body>
-    <h1>Welcome aboard, {{ name }}.</h1>
+<h1>ORBITAL</h1>
+<h2>Welcome aboard, {{ name }}.</h2>
 
-    <!-- <p>Assigned Planet: {{ planet }}</p>
-    <p>Mission Designation: {{ mission }}</p> -->
+<p>Mission Designation: {{ mission }}</p>
 
-    <img
-      src="{{ url_for('static', filename='images/moon.jpeg') }}"
-      alt="Luna"
-    />
+{% extends "base.html" %} {% block content %}
 
-    <ul>
-      {% for object in celestial_data %}
-      <li>
-        <h2>{{ object.name }} | {{ object.type }}</h2>
-        <p>Moons : {{ object.moons }}</p>
+<!-- <h1>Welcome aboard, {{ name }}.</h1>
 
-        {% if object.name == "Earth" %}
-        <p>HABITABLE WORLD</p>
+<p>Mission Designation: {{ mission }}</p> -->
 
-        {% elif object.name == "Saturn" %}
-        <p>GAS GIANT</p>
+<img src="{{ url_for('static', filename='images/water.jpeg') }}" alt="Luna" />
 
-        {% elif object.name == "GJ 15 A b" %}
-        <p>EARTH-LIKE</p>
-
-        {% else %}
-        <p>UNCLASSIFIED OBJECT</p>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+{% endblock %}

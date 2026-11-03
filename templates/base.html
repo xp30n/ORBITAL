@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <title>ORBITAL | MISSION CONTROL</title>
 </head>
 <body>
-    
+    <header>
+        <!-- <h1> Project ORBITAL</h1> -->
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/missions">MISSIONS</a>
+            <a href="/object/Saturn">OBJECTS</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        ORBITAL // END OF TRANSMISSION
+    </footer>
 </body>
 </html>

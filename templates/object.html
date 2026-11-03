@@ -1,23 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/base.css') }}"
-    />
-    <title>ORBITAL | MISSION CONTROL</title>
-  </head>
-  <body>
-    <h1>CELESTIAL OBJECT PROFILE</h1>
+{% extends "base.html" %} {% block content %}
+<h2>CELESTIAL OBJECT PROFILE</h2>
 
-    <h2>{{ object_name }}</h2>
+<h2>{{ object_name }}</h2>
 
-    {% if object_name in observed_objects and discovered %}
-    <p>OBJECT CONFIRMED</p>
-    {% else %}
-    <p>OBJECT UNVERIFIED</p>
-    {% endif %}
-  </body>
-</html>
+{% if object_name in observed_objects and discovered %}
+<p>OBJECT CONFIRMED</p>
+{% else %}
+<p>OBJECT UNVERIFIED</p>
+{% endif %} {% endblock %}

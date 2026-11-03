@@ -1,38 +1,51 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/base.css') }}"
-    />
-    <title>ORBITAL | MISSION CONTROL</title>
-  </head>
-  <body>
-    <h1>Welcome aboard, {{ name }}.</h1>
+{% extends "base.html" %} {% block content %}
+<h2>Hello, {{ name }}.</h2>
 
-    {% if missions %}
-    <h3>MISSION DATABASE ONLINE</h3>
+{% if missions %}
+<h4>MISSION DATABASE ONLINE</h4>
+{% else %}
+<p>NO MISSION DATA AVAILABLE</p>
+{% endif %}
+
+<ul>
+  <h1>PROBES</h1>
+  {% for mission in missions %}
+  <li>
+    <h2>{{ mission.name }}</h2>
+    <h3>Destination: {{ mission.destination }}</h3>
+    <p>Deployed: {{ mission.year }}</p>
+    <p>Mission Status: {{ mission.status }}</p>
+
+    {% if mission.status == "Active" %}
+    <p>MISSION ACTIVE</p>
     {% else %}
-    <p>NO MISSION DATA AVAILABLE</p>
+    <p>MISSION INACTIVE</p>
     {% endif %}
+  </li>
+  {% endfor %}
+</ul>
 
-    <ul>
-      {% for mission in missions %}
-      <li>
-        <h2>{{ mission.name }}</h2>
-        <h3>Destination: {{ mission.destination }}</h3>
-        <p>Deployed: {{ mission.year }}</p>
-        <p>Mission Status: {{ mission.status }}</p>
+<ul>
+  <h1>AVAILABLE OBJECTS</h1>
+  {% for object in celestial_data %}
+  <li>
+    <h2>{{ object.name }} | {{ object.type }}</h2>
+    <p>Moons : {{ object.moons }}</p>
 
-        {% if mission.status == "Active" %}
-        <p>MISSION ACTIVE</p>
-        {% else %}
-        <p>MISSION INACTIVE</p>
-        {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+    {% if object.name == "Earth" %}
+    <p>HABITABLE WORLD</p>
+
+    {% elif object.name == "Saturn" %}
+    <p>GAS GIANT</p>
+
+    {% elif object.name == "GJ 15 A b" %}
+    <p>EARTH-LIKE</p>
+
+    {% else %}
+    <p>UNCLASSIFIED OBJECT</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
