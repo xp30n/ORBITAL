@@ -1,14 +1,14 @@
-<h1>ORBITAL</h1>
+{% extends "base.html" %} {% block content %} 
 
-{% extends "base.html" %} 
+{% for key in astronaut %}
+<p>{{ key }}: {{ astronaut[key] }}</p>
+{% endfor %}
 
-{% block content %}
-
-<h2>EXPLORER PROFILE</h2>
+<!-- <h2>EXPLORER PROFILE</h2>
 <h2>Welcome aboard, {{ astronaut["name"] }}.</h2>
 <p>Rank : {{ astronaut["rank"] }}</p>
 <p>Specialty: {{ astronaut["specialty"] }}</p>
-<p>Mission Count: {{ astronaut["mission_count"] }}</p>
+<p>Mission Count: {{ astronaut["mission_count"] }}</p> -->
 
 <img src="{{ url_for('static', filename='images/water.jpeg') }}" alt="Luna" />
 

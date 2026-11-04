@@ -1,28 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
     <title>ORBITAL | MISSION CONTROL</title>
-</head>
-<h1>ORBITAL</h1>
-<body>
+  </head>
+  <h1>ORBITAL</h1>
+  <body>
     <header>
-        <nav>
-            <a href="/">HOME</a>
-            <a href="/missions">MISSIONS</a>
-            <a href="/object/Saturn">OBJECTS</a>
-        </nav>
+      <nav>
+        <a href="{{ url_for('homepage') }}">HOME</a>
+        <a href="{{ url_for('missions_page') }}">MISSIONS</a>
+        <a href="{{ url_for('object_profile', name='Saturn') }}">OBJECTS</a>
+      </nav>
     </header>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    <main>{% block content %} {% endblock %}</main>
 
-    <footer>
-        ORBITAL // END OF TRANSMISSION
-    </footer>
-</body>
+    <footer>ORBITAL // END OF TRANSMISSION</footer>
+  </body>
 </html>
