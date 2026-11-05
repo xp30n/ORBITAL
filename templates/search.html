@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<h2>SEARCH CELESTIAL OBJECT</h2>
+
+<form action="/search" method="GET">
+    <label>Celestial Object:</label>
+
+    <input type="text" name="planet">
+    <button type="submit">SEARCH</button>
+</form>
+{% endblock %}

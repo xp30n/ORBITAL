@@ -2,6 +2,12 @@
 <h2>CELESTIAL OBJECT PROFILE</h2>
 
 <h2>{{ object_name }}</h2>
+<form action="/search" method="GET">
+    <label>Celestial Object:</label>
+
+    <input type="text" name="planet">
+    <button type="submit">SEARCH</button>
+</form>
 
 {% if object_name in observed_objects and discovered %}
 <p>OBJECT CONFIRMED</p>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -22,8 +22,15 @@ def about_page():
 def object_profile(name):
     observed_objects = ['Earth', 'Mars', 'Venus', 'Saturn']
     discovered = True
-    object_name = name.lower()
+    object_name = name
+    
     return render_template("object.html", observed_objects=observed_objects, object_name=object_name, discovered=discovered)
+
+@app.route('/search')
+def search():
+    planet = request.args.get('object')
+            
+    return render_template("search.html", planet=planet)
 
 @app.route('/transmissions/<message>')
 def transmission(message):
