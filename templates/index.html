@@ -1,6 +1,4 @@
-{% extends "base.html" %} {% block content %} 
-
-{% for key in astronaut %}
+{% extends "base.html" %} {% block content %} {% for key in astronaut %}
 <p>{{ key }}: {{ astronaut[key] }}</p>
 {% endfor %}
 

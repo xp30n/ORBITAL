@@ -2,9 +2,14 @@
 <h2>SEARCH CELESTIAL OBJECT</h2>
 
 <form action="/search" method="GET">
-    <label>Celestial Object:</label>
+  <label>Celestial Object:</label>
 
-    <input type="text" name="planet">
-    <button type="submit">SEARCH</button>
+  <input type="text" name="planet" />
+  <button type="submit">SEARCH</button>
 </form>
-{% endblock %}
+
+{% if planet %}
+<h3>SEARCH QUERY: {{ planet }}</h3>
+{% else %}
+<p>PLEASE ENTER A CELESTIAL OBJECT</p>
+{% endif %} {% endblock %}

@@ -28,8 +28,7 @@ def object_profile(name):
 
 @app.route('/search')
 def search():
-    planet = request.args.get('object')
-            
+    planet = request.args.get('planet', '')
     return render_template("search.html", planet=planet)
 
 @app.route('/transmissions/<message>')
